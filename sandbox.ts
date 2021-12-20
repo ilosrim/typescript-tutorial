@@ -36,56 +36,74 @@
 // };
 
 // explict types
-let character: string = null;
-let age: number;
-let isLoggedIn: boolean;
+// let character: string = null;
+// let age: number;
+// let isLoggedIn: boolean;
 
-// arrays
-let tree: string[] = [];
-let lists: number[];
-let listsTwo: any[] = [];
-listsTwo.push(2);
-listsTwo.push("hello");
+// // arrays
+// let tree: string[] = [];
+// let lists: number[];
+// let listsTwo: any[] = [];
+// listsTwo.push(2);
+// listsTwo.push("hello");
 
-// tree = ["a", "b"];
-tree.push("c");
+// // tree = ["a", "b"];
+// tree.push("c");
 
-// union types
-let mixed: (string | number | boolean)[] = [];
-mixed.push("blah");
-mixed.push(123);
-mixed.push(true);
+// // union types
+// let mixed: (string | number | boolean)[] = [];
+// mixed.push("blah");
+// mixed.push(123);
+// mixed.push(true);
+
+// console.log(mixed);
+
+// let uid: string | number;
+// uid = "23";
+// uid = 23;
+
+// // objects
+// let codOne: object;
+// codOne = {
+//   name: "Ilosrim",
+//   age: 23,
+//   status: "student",
+// };
+
+// let codeTwo: {
+//   name: string;
+//   age: number;
+//   isLoggedIn: boolean;
+//   skils: string[];
+// };
+
+// // codeTwo.name = "Jack";
+// // codeTwo.age = 23;
+// // codeTwo.isLoggedIn = false;
+
+// codeTwo = {
+//   name: "mario",
+//   age: 23,
+//   isLoggedIn: false,
+//   skils: ["html", "css", "js"],
+// };
+
+// console.log(codeTwo);
+
+// Dynamic (any) Types
+let age: any = 25;
+age = true;
+age = "hello";
+
+let mixed: any[] = [];
+mixed.push(23, 22, 6, 8);
+mixed.push("hello");
+mixed.shift();
+mixed.pop();
 
 console.log(mixed);
 
-let uid: string | number;
-uid = "23";
-uid = 23;
+let codahiri: object = { name: "a", age: 5 };
 
-// objects
-let codOne: object;
-codOne = {
-  name: "Ilosrim",
-  age: 23,
-  status: "student",
-};
-
-let codeTwo: {
-  name: string;
-  age: number;
-  isLoggedIn: boolean;
-  skils: string[];
-};
-
-// codeTwo.name = "Jack";
-// codeTwo.age = 23;
-// codeTwo.isLoggedIn = false;
-
-codeTwo = {
-  name: "mario",
-  age: 23,
-  isLoggedIn: false,
-  skils: ["html", "css", "js"],
-};
-
-console.log(codeTwo);
+let ninja: { name: any; age: any };
+ninja = { name: "ilosrim", age: 23 };
