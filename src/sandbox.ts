@@ -1,12 +1,16 @@
 class Invoice {
-  client: string;
-  details: string;
-  amount: number;
+  // readonly client: string; // o'zgartirish mumkin emas
+  // private details: string; // class-dan tashqarida ko'rinmaydi
+  // public amount: number; // ko'rinadi, o'zgartirsa bo'ladi
 
-  constructor(c: string, d: string, a: number) {
-    this.client = c;
-    this.details = d;
-    this.amount = a;
+  constructor(
+    readonly client: string,
+    private details: string,
+    public amount: number
+  ) {
+    // this.client = c;
+    // this.details = d;
+    // this.amount = a;
   }
 
   format() {
@@ -22,6 +26,11 @@ invoices.push(invOne);
 invoices.push(invTwo);
 console.log(invoices);
 
+invoices.forEach((inv) => {
+  console.log(inv.client, inv.amount, inv.format());
+});
+
+// form
 const form = document.querySelector(".new-item-form") as HTMLFormElement;
 
 // inputs

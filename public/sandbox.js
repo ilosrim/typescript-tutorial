@@ -1,9 +1,15 @@
 "use strict";
 class Invoice {
-    constructor(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
+    // readonly client: string; // o'zgartirish mumkin emas
+    // private details: string; // class-dan tashqarida ko'rinmaydi
+    // public amount: number; // ko'rinadi, o'zgartirsa bo'ladi
+    constructor(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
+        // this.client = c;
+        // this.details = d;
+        // this.amount = a;
     }
     format() {
         return `${this.client} ownes $${this.amount} for ${this.details}`;
@@ -15,6 +21,10 @@ let invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
 console.log(invoices);
+invoices.forEach((inv) => {
+    console.log(inv.client, inv.amount, inv.format());
+});
+// form
 const form = document.querySelector(".new-item-form");
 // inputs
 const type = document.querySelector("#type");
