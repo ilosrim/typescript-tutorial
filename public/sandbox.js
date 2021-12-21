@@ -1,12 +1,28 @@
 "use strict";
-let greet;
-greet = () => {
-    return "Hello World";
+const add = (uid) => {
+    console.log(uid);
 };
-const add = (a, b, c = 10) => {
-    return a + b;
+const greet = (user) => {
+    return user;
 };
-const minus = (a, b) => {
-    return a - b;
+let greetTwo;
+greetTwo = (name, greeting) => {
+    console.log(`${name} says ${greeting}`);
 };
-let result = minus(15, 8);
+greetTwo("Jack", "Programmer");
+let calc;
+calc = (numOne, numTwo, action) => {
+    if (action === "abc") {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
+};
+let logDetails;
+logDetails = (ninja) => {
+    return `${ninja.name[0].toUpperCase()}${ninja.name.slice(1)} is ${ninja.age} years old.`;
+};
+let count = logDetails({ name: "boqi", age: 23 });
+console.log(count);
+// ${s[0].toUpperCase()}${s.slice(1)}
