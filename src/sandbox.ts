@@ -1,38 +1,12 @@
-type StrOrNum = string | number;
-type objWithname = { name: string; uid: StrOrNum };
-type person = { name: string; age: number };
+const form = document.querySelector(".new-item-form") as HTMLFormElement;
 
-const add = (uid: StrOrNum): void => {
-  console.log(uid);
-};
+// inputs
+const type = document.querySelector("#type") as HTMLSelectElement;
+const tofrom = document.querySelector("#tofrom") as HTMLInputElement;
+const details = document.querySelector("#details") as HTMLInputElement;
+const amount = document.querySelector("#amount") as HTMLInputElement;
 
-const greet = (user: objWithname) => {
-  return user;
-};
-
-let greetTwo: (a: string, b: string) => void;
-
-greetTwo = (name: string, greeting: string) => {
-  console.log(`${name} says ${greeting}`);
-};
-greetTwo("Jack", "Programmer");
-
-let calc: (a: number, b: number, c: string) => number;
-
-calc = (numOne: number, numTwo: number, action: string) => {
-  if (action === "abc") {
-    return numOne + numTwo;
-  } else {
-    return numOne - numTwo;
-  }
-};
-
-let logDetails: (obj: person) => void;
-logDetails = (ninja: person) => {
-  return `${ninja.name[0].toUpperCase()}${ninja.name.slice(1)} is ${
-    ninja.age
-  } years old.`;
-};
-let count = logDetails({ name: "boqi", age: 23 });
-console.log(count);
-// ${s[0].toUpperCase()}${s.slice(1)}
+form.addEventListener("submit", (e: Event) => {
+  e.preventDefault();
+  console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
+});
